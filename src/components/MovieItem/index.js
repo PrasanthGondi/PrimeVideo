@@ -10,15 +10,22 @@ const MovieItem = props => {
   console.log('Item URL:', item.thumbnailUrl)
   return (
     <div className="popup-container">
-      <Popup modal trigger={<img src={item.thumbnailUrl} className="im1" />}>
+      <Popup
+        modal
+        trigger={
+          <img src={item.thumbnailUrl} className="im1" alt="thumbnail" />
+        }
+        className="popup-content"
+      >
         {close => (
           <>
             <button
               type="button"
               className="trigger-button"
               onClick={() => close()}
+              id="closeButton"
             >
-              <IoMdClose />
+              <IoMdClose testid="closeButton" />
             </button>
             <ReactPlayer url={item.videoUrl} />
           </>
