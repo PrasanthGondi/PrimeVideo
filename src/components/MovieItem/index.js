@@ -2,13 +2,15 @@
 import Popup from 'reactjs-popup'
 import ReactPlayer from 'react-player'
 import {IoMdClose} from 'react-icons/io'
+import 'reactjs-popup/dist/index.css'
+import './index.css'
 
 const MovieItem = props => {
   const {item} = props
   console.log('Item URL:', item.thumbnailUrl)
   return (
-    <div>
-      <Popup modal trigger={<button>Hello</button>}>
+    <div className="popup-container">
+      <Popup modal trigger={<img src={item.thumbnailUrl} className="im1" />}>
         {close => (
           <>
             <button
@@ -22,6 +24,7 @@ const MovieItem = props => {
           </>
         )}
       </Popup>
+      {/* <img src={item.thumbnailUrl} className="im1" /> */}
     </div>
   )
 }
